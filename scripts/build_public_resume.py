@@ -223,8 +223,8 @@ def build():
     story += section("Earlier experience")
     earlier_experience = Table(
         [
-            [Paragraph("<b>Industrial Technology Research Institute</b><br/>Software Engineer", small_style), Paragraph("July 2019 to August 2019", meta_right_style)],
-            [Paragraph("<b>Hokicat Digital Marketing</b><br/>Content Strategist Intern", small_style), Paragraph("July 2018 to May 2019", meta_right_style)],
+            [Paragraph("<b>Industrial Technology Research Institute</b><br/>Software Engineer Intern", small_style), Paragraph("July 2019 to August 2019", meta_right_style)],
+            [Paragraph("<b>Hokicat Digital Marketing</b><br/>Content Strategist", small_style), Paragraph("July 2018 to May 2019", meta_right_style)],
         ],
         colWidths=[4.65 * inch, 1.95 * inch],
         hAlign="LEFT",
