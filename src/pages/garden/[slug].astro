@@ -13,7 +13,7 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<BaseLayout title={`${entry.data.title} — Shawn Lin`} description={entry.data.description}>
+<BaseLayout title={`${entry.data.title} | Shawn Lin`} description={entry.data.description}>
   <SiteHeader />
   <main class="article-page shell garden-article">
     <a class="back-link focus-ring" href="/garden">← Garden</a>

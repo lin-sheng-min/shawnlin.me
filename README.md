@@ -1,4 +1,4 @@
-# Shawn Lin — Personal Website
+# Shawn Lin | Personal Website
 
 The first production version of [shawnlin.me](https://shawnlin.me): a warm editorial personal site for professional work, photography, journal entries, travel notes, and future ideas.
 
@@ -44,7 +44,7 @@ Work chapters live in `src/content/work/`. Each Markdown or MDX file uses:
 ```yaml
 company: Company name
 role: Role title
-period: 2025 — Present
+period: 2025 to Present
 order: 1
 summary: One concise public description.
 location: Optional location

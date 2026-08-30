@@ -1,7 +1,7 @@
 ---
 company: Sigma Computing
 role: Technical Program Manager
-period: 2025 — Present
+period: 2025 to Present
 order: 1
 summary: Building the connective tissue for ambitious technical work across engineering, security, and infrastructure.
 location: San Francisco, CA
