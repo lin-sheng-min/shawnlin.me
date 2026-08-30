@@ -1,7 +1,7 @@
 ---
 company: Sigma Computing
 role: Technical Program Manager
-period: September 2025 to Present
+period: 2025 to Present
 order: 1
 summary: I lead cross functional technical programs across engineering, security, and infrastructure, turning complex dependencies into clear plans and shared ownership.
 location: San Francisco, CA

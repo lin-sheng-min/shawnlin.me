@@ -1,7 +1,7 @@
 ---
 company: Amazon
 role: Technical Program Manager Intern
-period: June to September 2024
+period: "2024"
 order: 2
 summary: I turned a repetitive budgeting process built around fragmented spreadsheets into a clear visual view of spending, plans, and priorities for leadership.
 location: Hybrid
