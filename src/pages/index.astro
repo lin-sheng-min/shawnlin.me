@@ -1,0 +1,163 @@
+---
+import { getCollection } from 'astro:content';
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import { siteLinks } from '../data/site';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
+const photographs = (await getCollection('photography'))
+  .filter((entry) => entry.data.featured)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const journal = (await getCollection('journal')).filter((entry) => !entry.data.draft);
+const garden = (await getCollection('garden')).filter((entry) => !entry.data.draft);
+const journalCategories = ['Travel', 'Food', 'Stay', 'Fly', 'Cards', 'Notes'];
+---
+
+<BaseLayout>
+  <SiteHeader />
+  <main>
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow-stack" aria-label="Professional context">
+          <span>Technical Program Manager</span>
+          <span>San Francisco, CA</span>
+        </div>
+        <h1 id="hero-title">
+          Things I build,<br />
+          places I go,<br />
+          and moments<br />
+          <em>I want to remember.</em>
+        </h1>
+        <a class="scroll-cue focus-ring" href="#selected-work">
+          <span>Scroll to explore</span><span aria-hidden="true">↓</span>
+        </a>
+      </div>
+      <figure class="hero-media">
+        <img
+          src="/images/hero-coast.jpg"
+          alt="A quiet coastal road curving through warm fog above the Pacific"
+          width="1536"
+          height="1024"
+          fetchpriority="high"
+        />
+        <figcaption>Temporary image study · Replace with Shawn's photograph</figcaption>
+      </figure>
+    </section>
+
+    <section class="work-preview shell section-space" id="selected-work" aria-labelledby="work-heading">
+      <div class="section-intro">
+        <p class="kicker">01 / Selected work</p>
+        <div>
+          <h2 id="work-heading">Programs, systems,<br />and the spaces between.</h2>
+          <a class="text-link focus-ring" href="/work">Explore work <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div class="work-list">
+        {work.map((entry, index) => (
+          <article class="work-row">
+            <span class="chapter">0{index + 1}</span>
+            <div>
+              <h3>{entry.data.company}</h3>
+              <p>{entry.data.role}</p>
+            </div>
+            <p class="work-summary">{entry.data.summary}</p>
+            <time>{entry.data.period}</time>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="photography-home" aria-labelledby="photography-heading">
+      <div class="shell section-space">
+        <div class="section-intro photography-intro">
+          <p class="kicker">02 / Photography</p>
+          <div>
+            <h2 id="photography-heading">Places, light,<br />and things I wanted<br /><em>to remember.</em></h2>
+            <a class="text-link focus-ring" href="/photography">View photography <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <div class="photo-collage">
+          {photographs.map((entry, index) => (
+            <a class:list={['photo-tile', `photo-${index + 1}`, 'focus-ring']} href={`/photography/${entry.id}/`}>
+              <img
+                src={entry.data.cover}
+                alt={entry.data.coverAlt}
+                width={entry.data.orientation === 'landscape' ? 1536 : 1120}
+                height={entry.data.orientation === 'landscape' ? 1024 : 1400}
+                loading="lazy"
+              />
+              <span class="photo-caption">
+                <span>{entry.data.title}</span>
+                {entry.data.placeholder && <small>Image study</small>}
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="journal-home shell section-space" aria-labelledby="journal-heading">
+      <div class="journal-head">
+        <p class="kicker">03 / Journal</p>
+        <h2 id="journal-heading">Notes from places I've been,<br />things I've tried, and rabbit holes<br /><em>I've fallen into.</em></h2>
+      </div>
+      <div class="category-line" aria-label="Journal categories">
+        {journalCategories.map((category) => <span>{category}</span>)}
+      </div>
+      {journal.length === 0 ? (
+        <div class="editorial-empty">
+          <p>Nothing published for the sake of filling space.</p>
+          <strong>Growing soon.</strong>
+          <a class="text-link focus-ring" href="/journal">Enter the journal <span aria-hidden="true">↗</span></a>
+        </div>
+      ) : (
+        <div class="journal-list">
+          {journal.slice(0, 3).map((entry) => <a href={`/journal/${entry.id}/`}>{entry.data.title}</a>)}
+        </div>
+      )}
+    </section>
+
+    <section class="garden-home" aria-labelledby="garden-heading">
+      <div class="shell garden-grid section-space">
+        <div>
+          <p class="kicker">04 / Garden</p>
+          <h2 id="garden-heading">Things I'm thinking about,<br />experimenting with,<br />or slowly bringing to life.</h2>
+        </div>
+        <div class="garden-note">
+          <span class="garden-mark" aria-hidden="true">✳</span>
+          {garden.length === 0 ? (
+            <>
+              <p>The garden is intentionally quiet for now. Ideas will appear here when they are ready to be tended in public.</p>
+              <div class="status-key" aria-label="Garden statuses">
+                {['Seed', 'Growing', 'Bloomed', 'Archived'].map((status) => <span>{status}</span>)}
+              </div>
+            </>
+          ) : (
+            <a href={`/garden/${garden[0].id}/`}>{garden[0].data.title}</a>
+          )}
+          <a class="text-link focus-ring" href="/garden">Visit the garden <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-home shell section-space" aria-labelledby="about-heading">
+      <div class="portrait-placeholder" role="img" aria-label="Reserved for a portrait of Shawn with his dog">
+        <span>Portrait reserved</span>
+        <strong>Shawn + dog</strong>
+        <small>Replace with an optimized 4:5 photograph</small>
+      </div>
+      <div class="about-copy">
+        <p class="kicker">05 / About</p>
+        <h2 id="about-heading">I'm Shawn.</h2>
+        <p>I work on technical programs, take too many photos, research flights and credit cards more than necessary, and usually have a new place I want to visit or something new I want to explore.</p>
+        <div class="inline-links" aria-label="About links">
+          <a class="focus-ring" href={siteLinks.resume}>Resume</a>
+          {siteLinks.linkedin ? <a class="focus-ring" href={siteLinks.linkedin}>LinkedIn</a> : <span title="Add Shawn's LinkedIn URL in src/data/site.ts">LinkedIn</span>}
+          {siteLinks.email ? <a class="focus-ring" href={siteLinks.email}>Email</a> : <span title="Add Shawn's email link in src/data/site.ts">Email</span>}
+        </div>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+</BaseLayout>

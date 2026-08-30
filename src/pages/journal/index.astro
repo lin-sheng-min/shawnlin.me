@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+import PageMasthead from '../../components/PageMasthead.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const entries = (await getCollection('journal'))
+  .filter((entry) => !entry.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const categories = ['Travel', 'Food', 'Stay', 'Fly', 'Cards', 'Notes'];
+---
+
+<BaseLayout
+  title="Journal — Shawn Lin"
+  description="Notes from places Shawn has been, things he has tried, and rabbit holes he has fallen into."
+>
+  <SiteHeader />
+  <main>
+    <PageMasthead
+      eyebrow="Journal / Field notes"
+      title="Notes from places I've been and rabbit holes I've fallen into."
+      intro="Travel, food, stays, flights, cards, and the occasional thought that does not fit neatly anywhere else. Nothing is published merely to make the page look full."
+    />
+    <section class="shell journal-index section-space">
+      <div class="category-line" aria-label="Journal categories">
+        {categories.map((category) => <span>{category}</span>)}
+      </div>
+      {entries.length === 0 ? (
+        <div class="journal-empty-page">
+          <p class="kicker">Current edition</p>
+          <h2>Growing soon.</h2>
+          <p>The structure is ready. The first note will appear when there is something worth keeping.</p>
+        </div>
+      ) : (
+        <div class="journal-rows">
+          {entries.map((entry) => (
+            <a class="journal-row focus-ring" href={`/journal/${entry.id}/`}>
+              <span>{entry.data.category}</span>
+              <h2>{entry.data.title}</h2>
+              <time>{entry.data.date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</time>
+            </a>
+          ))}
+        </div>
+      )}
+    </section>
+  </main>
+  <SiteFooter />
+</BaseLayout>

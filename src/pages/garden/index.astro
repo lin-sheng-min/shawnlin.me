@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content';
+import PageMasthead from '../../components/PageMasthead.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const entries = (await getCollection('garden'))
+  .filter((entry) => !entry.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const statuses = ['Seed', 'Growing', 'Bloomed', 'Archived'];
+---
+
+<BaseLayout
+  title="Garden — Shawn Lin"
+  description="Ideas Shawn is thinking about, experimenting with, or slowly bringing to life."
+>
+  <SiteHeader />
+  <main>
+    <PageMasthead
+      eyebrow="Garden / Ideas in progress"
+      title="Things I'm thinking about, experimenting with, or slowly bringing to life."
+      intro="Not every idea needs to become a polished project. This is a quieter place for thoughts to start small, change shape, or simply remain unfinished."
+      tone="garden"
+    />
+    <section class="shell garden-index section-space">
+      <div class="status-key large" aria-label="Garden statuses">
+        {statuses.map((status) => <span>{status}</span>)}
+      </div>
+      {entries.length === 0 ? (
+        <div class="garden-empty-page">
+          <span aria-hidden="true">✳</span>
+          <div>
+            <p class="kicker">The first seed</p>
+            <h2>Still underground.</h2>
+            <p>The garden will grow at the speed of the ideas inside it.</p>
+          </div>
+        </div>
+      ) : (
+        <div class="garden-cards">
+          {entries.map((entry) => (
+            <a class="garden-card focus-ring" href={`/garden/${entry.id}/`}>
+              <span>{entry.data.status}</span>
+              <h2>{entry.data.title}</h2>
+              <p>{entry.data.description}</p>
+            </a>
+          ))}
+        </div>
+      )}
+    </section>
+  </main>
+  <SiteFooter />
+</BaseLayout>

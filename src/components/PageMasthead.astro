@@ -1,0 +1,20 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  tone?: 'paper' | 'night' | 'garden';
+}
+
+const { eyebrow, title, intro, tone = 'paper' } = Astro.props;
+---
+
+<section class:list={['page-masthead', `tone-${tone}`]}>
+  <div class="shell page-masthead-grid">
+    <p class="kicker">{eyebrow}</p>
+    <div>
+      <h1>{title}</h1>
+      <p class="page-intro">{intro}</p>
+    </div>
+  </div>
+</section>

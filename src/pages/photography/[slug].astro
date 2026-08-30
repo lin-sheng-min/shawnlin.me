@@ -1,0 +1,44 @@
+---
+import { getCollection, render } from 'astro:content';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const photographs = await getCollection('photography');
+  return photographs.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<BaseLayout
+  title={`${entry.data.title} — Photography by Shawn Lin`}
+  description={entry.data.description}
+  image={entry.data.cover}
+>
+  <div class="night-page">
+    <SiteHeader />
+    <main class="photo-detail">
+      <header class="shell photo-detail-head">
+        <a class="back-link focus-ring" href="/photography">← Photography</a>
+        <h1>{entry.data.title}</h1>
+        <p>{entry.data.description}</p>
+      </header>
+      <figure class:list={['photo-detail-image', `is-${entry.data.orientation}`]}>
+        <img
+          src={entry.data.cover}
+          alt={entry.data.coverAlt}
+          width={entry.data.orientation === 'landscape' ? 1536 : 1120}
+          height={entry.data.orientation === 'landscape' ? 1024 : 1400}
+        />
+        <figcaption class="shell">
+          {entry.data.placeholder ? 'Temporary image study · Replace with Shawn’s optimized photograph' : entry.data.coverAlt}
+        </figcaption>
+      </figure>
+      <article class="prose shell"><Content /></article>
+    </main>
+    <SiteFooter />
+  </div>
+</BaseLayout>

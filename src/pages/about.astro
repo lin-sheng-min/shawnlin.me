@@ -1,0 +1,32 @@
+---
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import { siteLinks } from '../data/site';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About — Shawn Lin"
+  description="About Shawn Lin, a Technical Program Manager in San Francisco who works on technical programs, takes too many photos, and always has somewhere new to explore."
+>
+  <SiteHeader />
+  <main class="about-page shell">
+    <div class="about-page-image portrait-placeholder" role="img" aria-label="Reserved for a portrait of Shawn with his dog">
+      <span>Portrait reserved</span>
+      <strong>Shawn + dog</strong>
+      <small>Replace with an optimized 4:5 photograph</small>
+    </div>
+    <div class="about-page-copy">
+      <p class="kicker">About / San Francisco, CA</p>
+      <h1>I'm Shawn.</h1>
+      <p class="about-lede">I work on technical programs, take too many photos, research flights and credit cards more than necessary, and usually have a new place I want to visit or something new I want to explore.</p>
+      <p>Professionally, I care about the connective work: translating complexity, creating clarity, and helping technical teams move in the same direction. Outside of work, I am usually looking through a camera, planning the next trip, or keeping a note that might become something later.</p>
+      <div class="inline-links" aria-label="About links">
+        <a class="focus-ring" href={siteLinks.resume}>Resume</a>
+        {siteLinks.linkedin ? <a class="focus-ring" href={siteLinks.linkedin}>LinkedIn</a> : <span title="Add Shawn's LinkedIn URL in src/data/site.ts">LinkedIn</span>}
+        {siteLinks.email ? <a class="focus-ring" href={siteLinks.email}>Email</a> : <span title="Add Shawn's email link in src/data/site.ts">Email</span>}
+      </div>
+    </div>
+  </main>
+  <SiteFooter />
+</BaseLayout>

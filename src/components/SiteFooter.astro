@@ -1,0 +1,22 @@
+---
+import { navigation, siteLinks } from '../data/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div>
+      <a class="footer-wordmark focus-ring" href="/">Shawn Lin</a>
+      <p>Technical programs, photography,<br />and a life still in progress.</p>
+    </div>
+    <nav aria-label="Footer navigation">
+      {navigation.map((link) => <a class="focus-ring" href={link.href}>{link.label}</a>)}
+    </nav>
+    <div class="footer-links">
+      {siteLinks.linkedin ? <a class="focus-ring" href={siteLinks.linkedin}>LinkedIn</a> : <span title="Add Shawn's LinkedIn URL in src/data/site.ts">LinkedIn</span>}
+      {siteLinks.email ? <a class="focus-ring" href={siteLinks.email}>Email</a> : <span title="Add Shawn's email link in src/data/site.ts">Email</span>}
+    </div>
+    <p class="copyright">© {year} Shawn Lin</p>
+  </div>
+</footer>

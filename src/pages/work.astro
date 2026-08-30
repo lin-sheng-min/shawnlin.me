@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import PageMasthead from '../components/PageMasthead.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+  title="Work — Shawn Lin"
+  description="Selected professional chapters from Shawn Lin's work across technical programs and software engineering."
+>
+  <SiteHeader />
+  <main>
+    <PageMasthead
+      eyebrow="Work / Selected chapters"
+      title="Turning technical complexity into shared momentum."
+      intro="I work where engineering detail, cross-functional alignment, and practical execution meet. The role changes shape with the problem; the aim is always the same: make ambitious work easier to understand and move forward."
+    />
+    <section class="shell work-page-list section-space" aria-label="Professional experience">
+      {work.map((entry, index) => (
+        <article class="work-chapter">
+          <div class="work-chapter-number">0{index + 1}</div>
+          <header>
+            <p>{entry.data.period}</p>
+            <h2>{entry.data.company}</h2>
+            <p>{entry.data.role}</p>
+          </header>
+          <p class="work-chapter-summary">{entry.data.summary}</p>
+          <div class="work-chapter-note">
+            <span>Selected chapter</span>
+            <p>Program details and measurable outcomes can be added here when they are ready for public sharing.</p>
+          </div>
+        </article>
+      ))}
+    </section>
+    <section class="shell quiet-cta">
+      <p>For the detailed version</p>
+      <a class="text-link focus-ring" href="/about">Start with the person behind the programs <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+  <SiteFooter />
+</BaseLayout>

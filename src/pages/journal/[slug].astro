@@ -1,0 +1,28 @@
+---
+import { getCollection, render } from 'astro:content';
+import SiteFooter from '../../components/SiteFooter.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = (await getCollection('journal')).filter((entry) => !entry.data.draft);
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<BaseLayout title={`${entry.data.title} — Shawn Lin`} description={entry.data.description} image={entry.data.cover}>
+  <SiteHeader />
+  <main class="article-page shell">
+    <a class="back-link focus-ring" href="/journal">← Journal</a>
+    <header>
+      <p class="kicker">{entry.data.category} / {entry.data.date.getFullYear()}</p>
+      <h1>{entry.data.title}</h1>
+      <p>{entry.data.description}</p>
+    </header>
+    <article class="prose"><Content /></article>
+  </main>
+  <SiteFooter />
+</BaseLayout>

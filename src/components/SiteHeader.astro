@@ -1,0 +1,22 @@
+---
+import { navigation } from '../data/site';
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="site-header" data-header>
+  <a class="wordmark focus-ring" href="/" aria-label="Shawn Lin, home">Shawn Lin</a>
+  <nav class="desktop-nav" aria-label="Primary navigation">
+    {navigation.map((link) => (
+      <a class:list={['nav-link', 'focus-ring', { active: currentPath.startsWith(link.href) }]} href={link.href}>
+        {link.label}
+      </a>
+    ))}
+  </nav>
+  <details class="mobile-menu">
+    <summary class="focus-ring">Menu</summary>
+    <nav aria-label="Mobile navigation">
+      {navigation.map((link) => <a class="focus-ring" href={link.href}>{link.label}</a>)}
+    </nav>
+  </details>
+</header>
