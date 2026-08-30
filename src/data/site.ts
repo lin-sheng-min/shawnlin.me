@@ -1,5 +1,5 @@
 export const siteLinks = {
-  resume: '/Shawn_Lin_Public_Resume.pdf?v=20260830-4',
+  resume: '/Shawn_Lin_Public_Resume.pdf?v=20260830-5',
   linkedin: 'https://www.linkedin.com/in/shawnlin/',
   email: 'mailto:smlin.shawn@gmail.com',
 } as const;

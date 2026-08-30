@@ -209,7 +209,7 @@ def build():
         experience(
             "Hour Loop",
             "Taipei, Taiwan",
-            "Full Stack Software Engineer",
+            "Software Engineer",
             "May 2022 to January 2024",
             [
                 "Built and scaled event driven order processing across AWS and GCP while improving reliability and observability.",

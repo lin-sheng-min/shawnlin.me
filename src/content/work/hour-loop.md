@@ -1,6 +1,6 @@
 ---
 company: Hour Loop
-role: Full Stack Software Engineer
+role: Software Engineer
 period: 2022 to 2024
 order: 3
 summary: I built distributed systems and data pipelines at production scale, which gave me the technical foundation I now bring to program leadership.
