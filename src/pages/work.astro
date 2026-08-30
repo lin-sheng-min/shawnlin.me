@@ -6,6 +6,8 @@ import SiteHeader from '../components/SiteHeader.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
+const featuredWork = work.filter((entry) => entry.data.featured);
+const earlierWork = work.filter((entry) => !entry.data.featured);
 ---
 
 <BaseLayout
@@ -20,25 +22,50 @@ const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.
       intro="I work where engineering detail, cross-functional alignment, and practical execution meet. The role changes shape with the problem; the aim is always the same: make ambitious work easier to understand and move forward."
     />
     <section class="shell work-page-list section-space" aria-label="Professional experience">
-      {work.map((entry, index) => (
+      {featuredWork.map((entry, index) => (
         <article class="work-chapter">
           <div class="work-chapter-number">0{index + 1}</div>
           <header>
             <p>{entry.data.period}</p>
             <h2>{entry.data.company}</h2>
             <p>{entry.data.role}</p>
+            {entry.data.location && <p class="work-chapter-location">{entry.data.location}</p>}
           </header>
           <p class="work-chapter-summary">{entry.data.summary}</p>
           <div class="work-chapter-note">
-            <span>Selected chapter</span>
-            <p>Program details and measurable outcomes can be added here when they are ready for public sharing.</p>
+            <span>Selected impact</span>
+            <ul class="work-highlights">
+              {entry.data.highlights.map((highlight) => <li>{highlight}</li>)}
+            </ul>
           </div>
         </article>
       ))}
     </section>
+    <section class="shell earlier-work section-space" aria-labelledby="earlier-work-title">
+      <header class="earlier-work-heading">
+        <p class="kicker">Earlier chapters</p>
+        <h2 id="earlier-work-title">The work before the title.</h2>
+        <p>Software taught me how systems behave. Content taught me how people understand them. Both still shape how I lead programs today.</p>
+      </header>
+      <div class="earlier-work-list">
+        {earlierWork.map((entry) => (
+          <article class="earlier-work-row">
+            <div>
+              <p>{entry.data.period}</p>
+              <h3>{entry.data.company}</h3>
+            </div>
+            <div>
+              <p class="earlier-work-role">{entry.data.role}</p>
+              <p>{entry.data.summary}</p>
+            </div>
+            <p>{entry.data.location}</p>
+          </article>
+        ))}
+      </div>
+    </section>
     <section class="shell quiet-cta">
-      <p>For the detailed version</p>
-      <a class="text-link focus-ring" href="/about">Start with the person behind the programs <span aria-hidden="true">↗</span></a>
+      <p>For the concise version</p>
+      <a class="text-link focus-ring" href="/Shawn_Lin_Public_Resume.pdf">Download the public resume <span aria-hidden="true">↗</span></a>
     </section>
   </main>
   <SiteFooter />

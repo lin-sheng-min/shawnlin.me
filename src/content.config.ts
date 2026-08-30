@@ -11,6 +11,8 @@ const work = defineCollection({
     order: z.number(),
     summary: z.string(),
     location: z.string().optional(),
+    highlights: z.array(z.string()).default([]),
+    featured: z.boolean().default(true),
   }),
 });
 

@@ -48,9 +48,13 @@ period: 2025 to Present
 order: 1
 summary: One concise public description.
 location: Optional location
+highlights:
+  - One public-safe example of impact.
+  - Another public-safe example of impact.
+featured: true # Set false for a compact earlier-experience entry
 ```
 
-The homepage and `/work` both read from this collection.
+The homepage and `/work` both read from this collection. Featured entries receive full editorial chapters on the Work page. Earlier experience uses the same collection with `featured: false` and appears in a more compact section.
 
 ## Adding photography
 
@@ -105,9 +109,21 @@ status: Seed # Seed, Growing, Bloomed, or Archived
 draft: false
 ```
 
+## Public resume
+
+The downloadable public resume lives at `public/Shawn_Lin_Public_Resume.pdf`. It intentionally excludes private contact details, client values, security counts, and internal budget figures.
+
+To rebuild it after editing the source content in `scripts/build_public_resume.py`, run:
+
+```sh
+python3 scripts/build_public_resume.py
+```
+
+The script writes the deployment copy to `public/` and a review copy to `output/pdf/`.
+
 ## Personal links
 
-Update `src/data/site.ts` with Shawn's public LinkedIn URL and preferred public email link. They are deliberately left unset rather than guessed from private local information. Until supplied, their labels remain visible but inactive. The Resume label currently links to the full Work page and can be replaced with a PDF URL later.
+Update `src/data/site.ts` with Shawn's public LinkedIn URL, preferred public email link, and public resume path.
 
 ## SEO and accessibility
 
