@@ -11,11 +11,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 >
   <SiteHeader />
   <main class="about-page shell">
-    <div class="about-page-image portrait-placeholder" role="img" aria-label="Reserved for a portrait of Shawn with his dog">
-      <span>Portrait reserved</span>
-      <strong>Shawn + dog</strong>
-      <small>Replace with an optimized 4:5 photograph</small>
-    </div>
+    <figure class="about-page-image about-portrait">
+      <img
+        src="/images/about/shawn-and-dog.webp"
+        alt="Shawn smiling beside his cream-colored dog"
+        width="2800"
+        height="1867"
+        fetchpriority="high"
+      />
+    </figure>
     <div class="about-page-copy">
       <p class="kicker">About / San Francisco, CA</p>
       <h1>I'm Shawn.</h1>

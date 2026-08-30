@@ -54,8 +54,8 @@ The homepage and `/work` both read from this collection.
 
 ## Adding photography
 
-1. Export an optimized web copy of the photograph. Keep the full-resolution original outside the public repository.
-2. Place the web copy in `public/images/` using a descriptive filename. JPEG is supported now; adding AVIF/WebP sources later is straightforward through a shared picture component.
+1. Keep the full-resolution original outside the public repository. Shawn's originals live in a separate local Pictures folder and are never modified by the site build.
+2. Export a metadata-free WebP copy into the relevant folder under `public/images/` using a descriptive filename. Current gallery copies use a maximum long edge of 2400px; hero and About images use up to 2800px.
 3. Add a Markdown or MDX file in `src/content/photography/`:
 
 ```yaml
@@ -67,11 +67,16 @@ coverAlt: Meaningful description of the photograph
 orientation: landscape
 featured: true
 placeholder: false
+location: Optional location label
+images:
+  - src: /images/photography/example/second-frame.webp
+    alt: Meaningful description of the photograph
+    caption: Optional short caption
+    width: 2400
+    height: 1600
 ```
 
-The three first-release photographs are generated image studies and are labeled as such in their records and on the site. Replace them with Shawn's own optimized images before treating the photography collection as final.
-
-The About portrait is intentionally not fabricated. Replace the portrait placeholder in `src/pages/index.astro` and `src/pages/about.astro` with a real optimized photograph of Shawn and his dog.
+The photography section contains Shawn's own photographs, organized into content-driven editorial collections. The original files must remain outside the repository; only optimized copies belong in `public/images/`.
 
 ## Adding journal entries
 

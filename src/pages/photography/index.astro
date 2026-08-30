@@ -18,7 +18,7 @@ const photographs = (await getCollection('photography')).sort((a, b) => b.data.d
       <PageMasthead
         eyebrow="Photography / Selected frames"
         title="Places, light, and things I wanted to remember."
-        intro="A growing visual notebook. The first-release images below are explicit stand-ins for Shawn's optimized originals; the collection architecture and presentation are production-ready."
+        intro="A growing visual notebook of familiar places, journeys farther away, and the small scenes that stayed with me."
         tone="night"
       />
       <section class="shell photography-index section-space" aria-label="Photography collections">
@@ -36,7 +36,7 @@ const photographs = (await getCollection('photography')).sort((a, b) => b.data.d
             <div class="collection-meta">
               <span>0{index + 1}</span>
               <h2>{entry.data.title}</h2>
-              {entry.data.placeholder && <small>Temporary image study</small>}
+              {entry.data.location && <small>{entry.data.location}</small>}
             </div>
           </a>
         ))}

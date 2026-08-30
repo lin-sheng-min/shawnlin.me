@@ -1,7 +1,7 @@
 export const siteLinks = {
   resume: '/work',
-  linkedin: '',
-  email: '',
+  linkedin: 'https://www.linkedin.com/in/shawnlin/',
+  email: 'mailto:smlin.shawn@gmail.com',
 } as const;
 
 export const navigation = [

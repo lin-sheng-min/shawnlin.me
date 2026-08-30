@@ -322,24 +322,10 @@ img { display: block; width: 100%; }
 .status-key span::before { margin-right: 8px; color: var(--garden); content: '•'; }
 .status-key.large { justify-content: flex-end; margin: 0 0 64px; }
 
-.about-home { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: clamp(50px, 9vw, 148px); align-items: center; }
-.portrait-placeholder {
-  aspect-ratio: 4 / 5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--line);
-  background:
-    linear-gradient(148deg, transparent 0 48%, rgb(125 135 109 / 12%) 48% 52%, transparent 52%),
-    var(--paper-soft);
-  color: var(--muted);
-  text-align: center;
-}
-
-.portrait-placeholder span,
-.portrait-placeholder small { font-size: 0.62rem; letter-spacing: 0.13em; text-transform: uppercase; }
-.portrait-placeholder strong { margin-block: 14px; color: var(--ink); font-family: var(--serif); font-size: clamp(3rem, 5vw, 5.2rem); font-weight: 300; letter-spacing: -0.05em; }
+.about-home { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: clamp(50px, 7vw, 120px); align-items: center; }
+.about-portrait { margin: 0; overflow: hidden; background: #e8e1d6; }
+.about-portrait img { width: 100%; height: 100%; object-fit: cover; }
+.about-home .about-portrait { aspect-ratio: 3 / 2; }
 .about-copy .kicker { margin-bottom: 54px; }
 .about-copy h2 { margin-bottom: 44px; }
 .about-copy > p:not(.kicker) { max-width: 760px; font-family: var(--serif); font-size: clamp(1.65rem, 2.6vw, 2.7rem); line-height: 1.26; letter-spacing: -0.025em; }
@@ -417,6 +403,27 @@ img { display: block; width: 100%; }
 .photo-detail-image figcaption { margin-top: 14px; color: #8f8b84; font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; }
 .photo-detail .prose { margin-top: 90px; margin-bottom: 160px; }
 
+.photo-essay-intro { margin-bottom: clamp(90px, 12vw, 170px) !important; }
+.photo-essay {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(54px, 9vw, 150px) clamp(18px, 3vw, 44px);
+  padding-bottom: clamp(120px, 15vw, 220px);
+}
+.photo-essay-frame { grid-column: 1 / 13; margin: 0; }
+.photo-essay-frame:nth-child(5n + 2) { grid-column: 2 / 10; }
+.photo-essay-frame:nth-child(5n + 3) { grid-column: 7 / 13; }
+.photo-essay-frame:nth-child(5n + 4) { grid-column: 1 / 8; }
+.photo-essay-frame:nth-child(5n + 5) { grid-column: 4 / 12; }
+.photo-essay-frame img { max-height: 92vh; object-fit: contain; }
+.photo-essay-frame figcaption {
+  margin-top: 14px;
+  color: #8f8b84;
+  font-size: .6rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
 .prose { max-width: 720px; font-family: var(--serif); font-size: 1.2rem; line-height: 1.7; }
 .prose a { text-decoration: underline; text-underline-offset: 4px; }
 .prose h2 { margin-top: 2.2em; font-size: 2.2rem; font-weight: 400; }
@@ -447,8 +454,9 @@ img { display: block; width: 100%; }
 .article-page header > p:last-child { max-width: 680px; color: var(--muted); font-family: var(--serif); font-size: 1.6rem; line-height: 1.45; }
 .garden-article h1 { color: #4b5443; }
 
-.about-page { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(50px, 9vw, 150px); align-items: center; padding-block: clamp(80px, 11vw, 160px); }
+.about-page { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(50px, 7vw, 120px); align-items: center; padding-block: clamp(80px, 11vw, 160px); }
 .about-page-image { width: 100%; }
+.about-page .about-portrait { aspect-ratio: 3 / 2; }
 .about-page-copy h1 { margin: 52px 0 46px; font-family: var(--serif); font-size: clamp(5rem, 9vw, 10rem); font-weight: 300; line-height: .84; letter-spacing: -.07em; }
 .about-lede { font-family: var(--serif); font-size: clamp(1.7rem, 2.8vw, 3rem); line-height: 1.27; letter-spacing: -.025em; }
 .about-page-copy > p:not(.kicker, .about-lede) { max-width: 610px; color: var(--muted); line-height: 1.8; }
@@ -471,7 +479,6 @@ img { display: block; width: 100%; }
   .about-home,
   .about-page { grid-template-columns: 1fr; }
   .garden-note { margin-left: auto; }
-  .portrait-placeholder { width: min(100%, 620px); }
   .about-copy { max-width: 700px; margin-left: auto; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .work-chapter { grid-template-columns: 54px 1fr 1fr; }
@@ -526,7 +533,8 @@ img { display: block; width: 100%; }
   .garden-note { margin: 0; }
   .garden-mark { margin-bottom: 45px; }
   .about-home { gap: 64px; }
-  .portrait-placeholder { width: 100%; }
+  .about-home .about-portrait,
+  .about-page .about-portrait { aspect-ratio: auto; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid > div:first-child,
   .copyright { grid-column: 1 / -1; }
@@ -545,6 +553,7 @@ img { display: block; width: 100%; }
   .photo-detail { padding-top: 72px; }
   .photo-detail-head { margin-bottom: 54px; }
   .photo-detail-head h1 { font-size: clamp(4rem, 18vw, 6.5rem); }
+  .photo-essay { display: flex; flex-direction: column; gap: 72px; }
   .journal-empty-page { grid-template-columns: 1fr; min-height: 430px; padding-top: 80px; }
   .journal-empty-page h2 { font-size: clamp(5rem, 26vw, 8rem); }
   .journal-empty-page > p:last-child { grid-column: 1; }

@@ -34,10 +34,27 @@ const { Content } = await render(entry);
           height={entry.data.orientation === 'landscape' ? 1024 : 1400}
         />
         <figcaption class="shell">
-          {entry.data.placeholder ? 'Temporary image study · Replace with Shawn’s optimized photograph' : entry.data.coverAlt}
+          {entry.data.coverAlt}
         </figcaption>
       </figure>
-      <article class="prose shell"><Content /></article>
+      <article class="prose shell photo-essay-intro"><Content /></article>
+      {entry.data.images.length > 0 && (
+        <section class="photo-essay shell" aria-label={`${entry.data.title} photographs`}>
+          {entry.data.images.map((image) => (
+            <figure class="photo-essay-frame">
+              <img
+                src={image.src}
+                alt={image.alt}
+                width={image.width}
+                height={image.height}
+                loading="lazy"
+                decoding="async"
+              />
+              {image.caption && <figcaption>{image.caption}</figcaption>}
+            </figure>
+          ))}
+        </section>
+      )}
     </main>
     <SiteFooter />
   </div>

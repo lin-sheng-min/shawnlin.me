@@ -25,6 +25,14 @@ const photography = defineCollection({
     orientation: z.enum(['landscape', 'portrait']).default('landscape'),
     featured: z.boolean().default(false),
     placeholder: z.boolean().default(false),
+    location: z.string().optional(),
+    images: z.array(z.object({
+      src: z.string(),
+      alt: z.string(),
+      caption: z.string().optional(),
+      width: z.number(),
+      height: z.number(),
+    })).default([]),
   }),
 });
 

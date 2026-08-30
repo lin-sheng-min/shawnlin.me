@@ -35,13 +35,13 @@ const journalCategories = ['Travel', 'Food', 'Stay', 'Fly', 'Cards', 'Notes'];
       </div>
       <figure class="hero-media">
         <img
-          src="/images/hero-coast.jpg"
-          alt="A quiet coastal road curving through warm fog above the Pacific"
-          width="1536"
-          height="1024"
+          src="/images/home/golden-gate-from-lands-end.webp"
+          alt="The Golden Gate Bridge beyond the rocky shoreline and cypress trees at Lands End"
+          width="1867"
+          height="2800"
           fetchpriority="high"
         />
-        <figcaption>Temporary image study · Replace with Shawn's photograph</figcaption>
+        <figcaption>Golden Gate from Lands End · San Francisco</figcaption>
       </figure>
     </section>
 
@@ -89,7 +89,7 @@ const journalCategories = ['Travel', 'Food', 'Stay', 'Fly', 'Cards', 'Notes'];
               />
               <span class="photo-caption">
                 <span>{entry.data.title}</span>
-                {entry.data.placeholder && <small>Image study</small>}
+                {entry.data.location && <small>{entry.data.location}</small>}
               </span>
             </a>
           ))}
@@ -142,11 +142,15 @@ const journalCategories = ['Travel', 'Food', 'Stay', 'Fly', 'Cards', 'Notes'];
     </section>
 
     <section class="about-home shell section-space" aria-labelledby="about-heading">
-      <div class="portrait-placeholder" role="img" aria-label="Reserved for a portrait of Shawn with his dog">
-        <span>Portrait reserved</span>
-        <strong>Shawn + dog</strong>
-        <small>Replace with an optimized 4:5 photograph</small>
-      </div>
+      <figure class="about-portrait">
+        <img
+          src="/images/about/shawn-and-dog.webp"
+          alt="Shawn smiling beside his cream-colored dog"
+          width="2800"
+          height="1867"
+          loading="lazy"
+        />
+      </figure>
       <div class="about-copy">
         <p class="kicker">05 / About</p>
         <h2 id="about-heading">I'm Shawn.</h2>
