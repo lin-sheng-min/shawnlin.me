@@ -212,9 +212,9 @@ def build():
             "Full Stack Software Engineer",
             "May 2022 to January 2024",
             [
-                "Built and scaled event driven order processing across AWS, Cloud Run, and Spanner while improving reliability and observability.",
-                "Developed data pipelines and Spark workflows that turned advertising and clickstream data into actionable insights.",
-                "Improved on call operations, continuous delivery, test coverage, and incident handoffs across engineering teams.",
+                "Built and scaled event driven order processing across AWS and GCP while improving reliability and observability.",
+                "Developed data pipelines that turned advertising and clickstream data into actionable insights.",
+                "Improved continuous delivery, test coverage, and engineering workflows across teams.",
                 "Recognized as company wide Top Performer of the Year for cross team impact and technical leadership.",
             ],
         ),
