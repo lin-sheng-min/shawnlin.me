@@ -25,6 +25,7 @@ const photography = defineCollection({
     cover: z.string(),
     coverAlt: z.string(),
     orientation: z.enum(['landscape', 'portrait']).default('landscape'),
+    layout: z.enum(['editorial', 'compact']).default('editorial'),
     featured: z.boolean().default(false),
     placeholder: z.boolean().default(false),
     location: z.string().optional(),

@@ -6,6 +6,7 @@ location: Xinjiang · October 2017
 cover: /images/photography/xinjiang-2017/high-plains.webp
 coverAlt: Snow-striped mountains rising beyond the wide brown grasslands of Xinjiang
 orientation: landscape
+layout: compact
 featured: true
 placeholder: false
 images:

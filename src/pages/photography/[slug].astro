@@ -20,26 +20,28 @@ const { Content } = await render(entry);
 >
   <div class="night-page">
     <SiteHeader />
-    <main class="photo-detail">
-      <header class="shell photo-detail-head">
-        <a class="back-link focus-ring" href="/photography">← Photography</a>
-        <h1>{entry.data.title}</h1>
-        <p>{entry.data.description}</p>
-      </header>
-      <figure class:list={['photo-detail-image', `is-${entry.data.orientation}`]}>
-        <img
-          src={entry.data.cover}
-          alt={entry.data.coverAlt}
-          width={entry.data.orientation === 'landscape' ? 1536 : 1120}
-          height={entry.data.orientation === 'landscape' ? 1024 : 1400}
-        />
-        <figcaption class="shell">
-          {entry.data.coverAlt}
-        </figcaption>
-      </figure>
+    <main class:list={['photo-detail', `photo-layout-${entry.data.layout}`]}>
+      <div class="photo-detail-opening">
+        <header class="shell photo-detail-head">
+          <a class="back-link focus-ring" href="/photography">← Photography</a>
+          <h1>{entry.data.title}</h1>
+          <p>{entry.data.description}</p>
+        </header>
+        <figure class:list={['photo-detail-image', `is-${entry.data.orientation}`]}>
+          <img
+            src={entry.data.cover}
+            alt={entry.data.coverAlt}
+            width={entry.data.orientation === 'landscape' ? 1536 : 1120}
+            height={entry.data.orientation === 'landscape' ? 1024 : 1400}
+          />
+          <figcaption class="shell">
+            {entry.data.coverAlt}
+          </figcaption>
+        </figure>
+      </div>
       <article class="prose shell photo-essay-intro"><Content /></article>
       {entry.data.images.length > 0 && (
-        <section class="photo-essay shell" aria-label={`${entry.data.title} photographs`}>
+        <section class:list={['photo-essay', 'shell', `is-${entry.data.layout}`]} aria-label={`${entry.data.title} photographs`}>
           {entry.data.images.map((image) => (
             <figure class="photo-essay-frame">
               <img
