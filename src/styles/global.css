@@ -458,6 +458,7 @@ img { display: block; width: 100%; }
 .journal-figure { margin: clamp(64px, 9vw, 120px) 0; }
 .journal-figure img { width: 100%; height: auto; }
 .journal-figure figcaption { margin-top: 14px; color: var(--muted); font-family: var(--sans); font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; }
+.journal-figure-narrow { width: min(64%, 610px); margin-right: auto; margin-left: auto; }
 .journal-photo-pair { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(16px, 2.6vw, 34px); margin: clamp(64px, 9vw, 120px) 0; }
 .journal-photo-pair .journal-figure { margin: 0; }
 .journal-photo-pair img { height: 100%; max-height: 760px; object-fit: cover; }
@@ -470,11 +471,15 @@ img { display: block; width: 100%; }
 .journal-empty-page { display: grid; grid-template-columns: .6fr 1.4fr; gap: 40px; min-height: 520px; padding-top: 110px; }
 .journal-empty-page h2 { margin: 0; font-family: var(--serif); font-size: clamp(5rem, 12vw, 12rem); font-weight: 300; line-height: .8; letter-spacing: -.07em; }
 .journal-empty-page > p:last-child { grid-column: 2; max-width: 480px; margin: 0; color: var(--muted); font-family: var(--serif); font-size: 1.5rem; }
-.journal-rows { border-top: 1px solid var(--ink); }
-.journal-row { display: grid; grid-template-columns: .3fr 1.4fr auto; gap: 30px; align-items: baseline; padding-block: 34px; border-bottom: 1px solid var(--line); }
-.journal-row h2 { margin: 0; font-family: var(--serif); font-size: 2.4rem; font-weight: 300; }
-.journal-row span,
-.journal-row time { color: var(--muted); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; }
+.journal-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(44px, 6vw, 84px) clamp(18px, 2.8vw, 38px); margin-top: clamp(64px, 8vw, 110px); }
+.journal-grid-card figure { position: relative; aspect-ratio: 1; margin: 0; overflow: hidden; background: #ded8ce; }
+.journal-grid-card figure img { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms cubic-bezier(.2,.6,.3,1); }
+.journal-grid-card:hover figure img { transform: scale(1.025); }
+.journal-grid-placeholder { display: grid; width: 100%; height: 100%; place-items: center; color: var(--garden); font-size: 3rem; }
+.journal-grid-arrow { position: absolute; right: 14px; bottom: 14px; display: grid; width: 38px; height: 38px; place-items: center; background: rgb(250 248 244 / 90%); font-size: 1rem; transition: transform 240ms ease; }
+.journal-grid-card:hover .journal-grid-arrow { transform: translate(3px, -3px); }
+.journal-grid-meta { display: flex; justify-content: space-between; gap: 18px; margin-top: 18px; color: var(--muted); font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; }
+.journal-grid-card h2 { margin: 12px 0 0; font-family: var(--serif); font-size: clamp(1.65rem, 2.4vw, 2.6rem); font-weight: 300; line-height: 1.02; letter-spacing: -.025em; }
 
 .garden-index { padding-top: 20px; }
 .garden-empty-page { display: grid; grid-template-columns: .35fr 1fr; gap: 60px; align-items: start; min-height: 560px; padding-top: 100px; border-top: 1px solid #aeb4a6; }
@@ -572,6 +577,7 @@ img { display: block; width: 100%; }
   .editorial-empty .text-link { grid-column: auto; grid-row: auto; justify-self: start; margin: 20px 0 0; }
   .journal-feature { grid-template-columns: 1fr; }
   .journal-feature figure { aspect-ratio: 3 / 4; }
+  .journal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .garden-home .section-space { padding-block: 100px; }
   .garden-note { margin: 0; }
   .garden-mark { margin-bottom: 45px; }
@@ -603,8 +609,7 @@ img { display: block; width: 100%; }
   .journal-empty-page { grid-template-columns: 1fr; min-height: 430px; padding-top: 80px; }
   .journal-empty-page h2 { font-size: clamp(5rem, 26vw, 8rem); }
   .journal-empty-page > p:last-child { grid-column: 1; }
-  .journal-row { grid-template-columns: 1fr auto; }
-  .journal-row h2 { grid-column: 1 / -1; grid-row: 2; }
+  .journal-figure-narrow { width: 82%; }
   .garden-empty-page { grid-template-columns: 1fr; gap: 34px; }
   .garden-empty-page > span { font-size: 4rem; }
   .garden-empty-page h2 { font-size: clamp(5rem, 25vw, 8rem); }

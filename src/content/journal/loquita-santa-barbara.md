@@ -49,7 +49,7 @@ We began with a glass of roja sangria and a strawberry limonada, followed by pla
 
 The standout was the paella verde. Loquita offers a vegetarian version, and it did not feel like an afterthought. The rice arrived covered with mushrooms, asparagus, artichokes, peppers, and generous spoonfuls of sauce. It was colorful, substantial, and easily the dish I would order again.
 
-<figure class="journal-figure">
+<figure class="journal-figure journal-figure-narrow">
   <img src="/images/journal/loquita-santa-barbara/paella-verde.webp" alt="Vegetarian paella verde topped with mushrooms, asparagus, artichokes, peppers, and sauce" width="1600" height="2400" loading="lazy" />
   <figcaption>Paella verde</figcaption>
 </figure>

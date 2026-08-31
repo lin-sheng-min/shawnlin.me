@@ -33,12 +33,28 @@ const categories = ['Travel', 'Food', 'Stay', 'Fly', 'Cards', 'Notes'];
           <p>The structure is ready. The first note will appear when there is something worth keeping.</p>
         </div>
       ) : (
-        <div class="journal-rows">
+        <div class="journal-grid">
           {entries.map((entry) => (
-            <a class="journal-row focus-ring" href={`/journal/${entry.id}/`}>
-              <span>{entry.data.category}</span>
+            <a class="journal-grid-card focus-ring" href={`/journal/${entry.id}/`}>
+              <figure>
+                {entry.data.cover ? (
+                  <img
+                    src={entry.data.cover}
+                    alt={entry.data.coverAlt ?? ''}
+                    width={entry.data.coverWidth}
+                    height={entry.data.coverHeight}
+                    loading="lazy"
+                  />
+                ) : (
+                  <span class="journal-grid-placeholder" aria-hidden="true">✳</span>
+                )}
+                <span class="journal-grid-arrow" aria-hidden="true">↗</span>
+              </figure>
+              <div class="journal-grid-meta">
+                <span>{entry.data.category}</span>
+                <time>{entry.data.date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</time>
+              </div>
               <h2>{entry.data.title}</h2>
-              <time>{entry.data.date.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</time>
             </a>
           ))}
         </div>
