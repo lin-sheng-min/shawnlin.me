@@ -201,7 +201,8 @@ def build():
             "Technical Program Manager Intern",
             "June 2024 to September 2024",
             [
-                "Simplified complex budget and project data into an intuitive visual summary for resource allocation and leadership decisions.",
+                "Turned more than 20 hours of manual data preparation into a roughly three minute setup with about five clicks.",
+                "Made complex budget and project data easy to read for more than 50 users, supporting resource allocation and leadership decisions.",
                 "Designed a repeatable workflow that transformed fragmented source files into a consistent view with minimal manual effort.",
                 "Made quarterly planning easier by bringing spending progress, actual costs, and project status into one place.",
             ],
@@ -246,7 +247,7 @@ def build():
     education = Table(
         [
             [Paragraph("<b>University of Illinois Urbana-Champaign</b><br/>Master of Computer Science", small_style), Paragraph("2025", meta_right_style)],
-            [Paragraph("<b>National Tsing Hua University</b><br/>B.B.A. in Management and Technology<br/>Double major in Computer Science and Quantitative Finance", small_style), Paragraph("2021", meta_right_style)],
+            [Paragraph("<b>National Tsing Hua University</b><br/>B.B.A. in Management and Technology<br/>Program of Computer Science and Quantitative Finance", small_style), Paragraph("2021", meta_right_style)],
         ],
         colWidths=[5.7 * inch, 0.9 * inch],
         hAlign="LEFT",
