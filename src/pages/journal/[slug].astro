@@ -17,22 +17,24 @@ const { Content } = await render(entry);
   <SiteHeader />
   <main class="article-page journal-article-page shell">
     <a class="back-link focus-ring" href="/journal">← Journal</a>
-    <header>
-      <p class="kicker">{entry.data.category} / {entry.data.date.getFullYear()}</p>
-      <h1>{entry.data.title}</h1>
-      <p>{entry.data.description}</p>
-    </header>
-    {entry.data.cover && (
-      <figure class="journal-cover">
-        <img
-          src={entry.data.cover}
-          alt={entry.data.coverAlt ?? entry.data.title}
-          width={entry.data.coverWidth}
-          height={entry.data.coverHeight}
-          fetchpriority="high"
-        />
-      </figure>
-    )}
+    <div class:list={['journal-article-hero', { 'has-cover': entry.data.cover }]}>
+      <header>
+        <p class="kicker">{entry.data.category} / {entry.data.date.getFullYear()}</p>
+        <h1>{entry.data.title}</h1>
+        <p>{entry.data.description}</p>
+      </header>
+      {entry.data.cover && (
+        <figure class="journal-cover">
+          <img
+            src={entry.data.cover}
+            alt={entry.data.coverAlt ?? entry.data.title}
+            width={entry.data.coverWidth}
+            height={entry.data.coverHeight}
+            fetchpriority="high"
+          />
+        </figure>
+      )}
+    </div>
     <article class="prose journal-prose"><Content /></article>
   </main>
   <SiteFooter />

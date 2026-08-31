@@ -449,8 +449,12 @@ img { display: block; width: 100%; }
 .prose { max-width: 720px; font-family: var(--serif); font-size: 1.2rem; line-height: 1.7; }
 .prose a { text-decoration: underline; text-underline-offset: 4px; }
 .prose h2 { margin-top: 2.2em; font-size: 2.2rem; font-weight: 400; }
-.journal-cover { width: min(74%, 720px); margin: -30px 0 110px auto; }
-.journal-cover img { width: 100%; height: auto; }
+.journal-article-hero { margin-block: clamp(72px, 9vw, 120px) clamp(90px, 11vw, 150px); }
+.journal-article-hero.has-cover { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(280px, .72fr); gap: clamp(46px, 7vw, 92px); align-items: center; }
+.journal-article-hero header { margin: 0; }
+.journal-article-hero h1 { font-size: clamp(4.4rem, 7.5vw, 7.4rem); }
+.journal-cover { width: 100%; max-width: 470px; margin: 0; justify-self: end; }
+.journal-cover img { width: 100%; aspect-ratio: 4 / 5; height: auto; object-fit: cover; object-position: center; }
 .journal-prose { max-width: none; }
 .journal-prose > p,
 .journal-prose > h2 { max-width: 720px; margin-right: auto; margin-left: auto; }
@@ -458,10 +462,15 @@ img { display: block; width: 100%; }
 .journal-figure { margin: clamp(64px, 9vw, 120px) 0; }
 .journal-figure img { width: 100%; height: auto; }
 .journal-figure figcaption { margin-top: 14px; color: var(--muted); font-family: var(--sans); font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; }
-.journal-figure-narrow { width: min(64%, 610px); margin-right: auto; margin-left: auto; }
 .journal-photo-pair { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(16px, 2.6vw, 34px); margin: clamp(64px, 9vw, 120px) 0; }
 .journal-photo-pair .journal-figure { margin: 0; }
-.journal-photo-pair img { height: 100%; max-height: 760px; object-fit: cover; }
+.journal-photo-pair img { width: 100%; aspect-ratio: 3 / 2; height: auto; object-fit: cover; }
+.journal-photo-pair.is-portrait img { aspect-ratio: 4 / 5; }
+.journal-split { display: grid; grid-template-columns: minmax(280px, .72fr) minmax(0, 1fr); gap: clamp(46px, 7vw, 92px); align-items: center; margin: clamp(84px, 11vw, 150px) 0; }
+.journal-split .journal-figure { margin: 0; }
+.journal-split .journal-figure img { aspect-ratio: 4 / 5; object-fit: cover; }
+.journal-split-copy h2 { margin: 0 0 30px; font-size: clamp(2.5rem, 4.5vw, 4.2rem); font-weight: 400; line-height: 1; letter-spacing: -.035em; }
+.journal-split-copy p { margin: 0; }
 .journal-note { max-width: 720px; margin: 90px auto 0; padding: 32px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
 .journal-note > span { color: var(--muted); font-family: var(--sans); font-size: .64rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
 .journal-note p { margin: 18px 0 0; }
@@ -609,16 +618,21 @@ img { display: block; width: 100%; }
   .journal-empty-page { grid-template-columns: 1fr; min-height: 430px; padding-top: 80px; }
   .journal-empty-page h2 { font-size: clamp(5rem, 26vw, 8rem); }
   .journal-empty-page > p:last-child { grid-column: 1; }
-  .journal-figure-narrow { width: 82%; }
   .garden-empty-page { grid-template-columns: 1fr; gap: 34px; }
   .garden-empty-page > span { font-size: 4rem; }
   .garden-empty-page h2 { font-size: clamp(5rem, 25vw, 8rem); }
   .garden-cards { grid-template-columns: 1fr; }
   .status-key.large { justify-content: flex-start; }
   .article-page h1 { font-size: clamp(4.5rem, 20vw, 7rem); }
-  .journal-cover { width: 100%; margin: -20px 0 72px; }
+  .journal-article-hero { margin-block: 64px 84px; }
+  .journal-article-hero.has-cover { grid-template-columns: 1fr; gap: 48px; }
+  .journal-article-hero h1 { font-size: clamp(4.2rem, 18vw, 6.5rem); }
+  .journal-cover { width: min(82%, 520px); justify-self: end; }
   .journal-photo-pair { grid-template-columns: 1fr; }
-  .journal-photo-pair img { max-height: none; }
+  .journal-photo-pair.is-portrait { width: min(100%, 560px); margin-right: auto; margin-left: auto; }
+  .journal-split { grid-template-columns: 1fr; gap: 42px; }
+  .journal-split-copy { order: -1; }
+  .journal-split .journal-figure { width: min(82%, 520px); margin-right: auto; margin-left: auto; }
   .about-page { gap: 70px; }
   .about-page-copy h1 { font-size: clamp(5rem, 24vw, 8rem); }
   .not-found h1 { font-size: clamp(6rem, 28vw, 10rem); }

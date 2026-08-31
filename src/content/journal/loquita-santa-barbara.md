@@ -23,7 +23,7 @@ The outdoor space feels tucked away from the street. Flowers climb the walls, sm
 
 We began with a glass of roja sangria and a strawberry limonada, followed by plates made for sharing. The mushroom croquetas, tortilla española, and patatas bravas made it easy to try a little of everything without rushing into the main dish.
 
-<div class="journal-photo-pair">
+<div class="journal-photo-pair is-portrait">
   <figure class="journal-figure">
     <img src="/images/journal/loquita-santa-barbara/sangria-and-strawberry-limonada.webp" alt="A glass of red sangria and a flower-garnished strawberry limonada" width="1600" height="2400" loading="lazy" />
     <figcaption>Sangria and strawberry limonada</figcaption>
@@ -45,18 +45,20 @@ We began with a glass of roja sangria and a strawberry limonada, followed by pla
   </figure>
 </div>
 
-## The dish I would return for
-
-The standout was the paella verde. Loquita offers a vegetarian version, and it did not feel like an afterthought. The rice arrived covered with mushrooms, asparagus, artichokes, peppers, and generous spoonfuls of sauce. It was colorful, substantial, and easily the dish I would order again.
-
-<figure class="journal-figure journal-figure-narrow">
-  <img src="/images/journal/loquita-santa-barbara/paella-verde.webp" alt="Vegetarian paella verde topped with mushrooms, asparagus, artichokes, peppers, and sauce" width="1600" height="2400" loading="lazy" />
-  <figcaption>Paella verde</figcaption>
-</figure>
+<section class="journal-split">
+  <figure class="journal-figure">
+    <img src="/images/journal/loquita-santa-barbara/paella-verde.webp" alt="Vegetarian paella verde topped with mushrooms, asparagus, artichokes, peppers, and sauce" width="1600" height="2400" loading="lazy" />
+    <figcaption>Paella verde</figcaption>
+  </figure>
+  <div class="journal-split-copy">
+    <h2>The dish I would return for</h2>
+    <p>The standout was the paella verde. Loquita offers a vegetarian version, and it did not feel like an afterthought. The rice arrived covered with mushrooms, asparagus, artichokes, peppers, and generous spoonfuls of sauce. It was colorful, substantial, and easily the dish I would order again.</p>
+  </div>
+</section>
 
 We ended with churros and a small birthday dessert. By then the patio lights were fully glowing and the restaurant had settled into that comfortable evening energy where no one feels in a hurry to leave.
 
-<div class="journal-photo-pair">
+<div class="journal-photo-pair is-portrait">
   <figure class="journal-figure">
     <img src="/images/journal/loquita-santa-barbara/churros.webp" alt="Churros served on a wooden board with two dipping sauces" width="1600" height="2400" loading="lazy" />
     <figcaption>Churros to finish</figcaption>
