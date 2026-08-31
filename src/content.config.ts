@@ -46,6 +46,9 @@ const journal = defineCollection({
     date: z.coerce.date(),
     category: z.enum(['Travel', 'Food', 'Stay', 'Fly', 'Cards', 'Notes']),
     cover: z.string().optional(),
+    coverAlt: z.string().optional(),
+    coverWidth: z.number().optional(),
+    coverHeight: z.number().optional(),
     draft: z.boolean().default(false),
   }),
 });

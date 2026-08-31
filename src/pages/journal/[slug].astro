@@ -15,14 +15,25 @@ const { Content } = await render(entry);
 
 <BaseLayout title={`${entry.data.title} | Shawn Lin`} description={entry.data.description} image={entry.data.cover}>
   <SiteHeader />
-  <main class="article-page shell">
+  <main class="article-page journal-article-page shell">
     <a class="back-link focus-ring" href="/journal">← Journal</a>
     <header>
       <p class="kicker">{entry.data.category} / {entry.data.date.getFullYear()}</p>
       <h1>{entry.data.title}</h1>
       <p>{entry.data.description}</p>
     </header>
-    <article class="prose"><Content /></article>
+    {entry.data.cover && (
+      <figure class="journal-cover">
+        <img
+          src={entry.data.cover}
+          alt={entry.data.coverAlt ?? entry.data.title}
+          width={entry.data.coverWidth}
+          height={entry.data.coverHeight}
+          fetchpriority="high"
+        />
+      </figure>
+    )}
+    <article class="prose journal-prose"><Content /></article>
   </main>
   <SiteFooter />
 </BaseLayout>

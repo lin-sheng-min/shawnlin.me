@@ -118,8 +118,22 @@ const journalCategories = ['Travel', 'Food', 'Stay', 'Fly', 'Cards', 'Notes'];
           <a class="text-link focus-ring" href="/journal">Enter the journal <span aria-hidden="true">↗</span></a>
         </div>
       ) : (
-        <div class="journal-list">
-          {journal.slice(0, 3).map((entry) => <a href={`/journal/${entry.id}/`}>{entry.data.title}</a>)}
+        <div class="journal-features">
+          {journal.slice(0, 3).map((entry) => (
+            <a class="journal-feature focus-ring" href={`/journal/${entry.id}/`}>
+              {entry.data.cover && (
+                <figure>
+                  <img src={entry.data.cover} alt="" width={entry.data.coverWidth} height={entry.data.coverHeight} loading="lazy" />
+                </figure>
+              )}
+              <div>
+                <p class="kicker">{entry.data.category} / {entry.data.date.getFullYear()}</p>
+                <h3>{entry.data.title}</h3>
+                <p>{entry.data.description}</p>
+                <span>Read the note <span aria-hidden="true">↗</span></span>
+              </div>
+            </a>
+          ))}
         </div>
       )}
     </section>

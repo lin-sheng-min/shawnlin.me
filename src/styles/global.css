@@ -306,6 +306,13 @@ img { display: block; width: 100%; }
 .editorial-empty p { align-self: start; margin: 0; color: var(--muted); font-size: 0.86rem; }
 .editorial-empty strong { grid-row: 2; font-family: var(--serif); font-size: clamp(4rem, 10vw, 9.5rem); font-weight: 300; letter-spacing: -0.06em; }
 .editorial-empty .text-link { grid-column: 2; grid-row: 2; margin: 0 0 28px; }
+.journal-features { margin-top: clamp(64px, 8vw, 110px); border-top: 1px solid var(--ink); }
+.journal-feature { display: grid; grid-template-columns: minmax(260px, .8fr) 1.2fr; gap: clamp(36px, 7vw, 110px); align-items: center; padding-block: clamp(42px, 6vw, 82px); border-bottom: 1px solid var(--line); }
+.journal-feature figure { aspect-ratio: 4 / 3; margin: 0; overflow: hidden; background: #ded8ce; }
+.journal-feature img { width: 100%; height: 100%; object-fit: cover; }
+.journal-feature h3 { max-width: 660px; margin: 24px 0 20px; font-family: var(--serif); font-size: clamp(2.8rem, 5vw, 5.8rem); font-weight: 300; line-height: .94; letter-spacing: -.045em; }
+.journal-feature div > p:not(.kicker) { max-width: 560px; margin: 0; color: var(--muted); line-height: 1.7; }
+.journal-feature div > span { display: inline-flex; gap: 10px; margin-top: 38px; padding-bottom: 6px; border-bottom: 1px solid currentColor; font-size: .68rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; }
 
 .garden-home { background: #e8e8df; }
 .garden-grid { display: grid; grid-template-columns: 1.35fr 0.65fr; gap: clamp(60px, 10vw, 160px); }
@@ -442,6 +449,21 @@ img { display: block; width: 100%; }
 .prose { max-width: 720px; font-family: var(--serif); font-size: 1.2rem; line-height: 1.7; }
 .prose a { text-decoration: underline; text-underline-offset: 4px; }
 .prose h2 { margin-top: 2.2em; font-size: 2.2rem; font-weight: 400; }
+.journal-cover { width: min(74%, 720px); margin: -30px 0 110px auto; }
+.journal-cover img { width: 100%; height: auto; }
+.journal-prose { max-width: none; }
+.journal-prose > p,
+.journal-prose > h2 { max-width: 720px; margin-right: auto; margin-left: auto; }
+.journal-prose > p:first-child { font-size: 1.5rem; line-height: 1.55; }
+.journal-figure { margin: clamp(64px, 9vw, 120px) 0; }
+.journal-figure img { width: 100%; height: auto; }
+.journal-figure figcaption { margin-top: 14px; color: var(--muted); font-family: var(--sans); font-size: .62rem; letter-spacing: .1em; text-transform: uppercase; }
+.journal-photo-pair { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(16px, 2.6vw, 34px); margin: clamp(64px, 9vw, 120px) 0; }
+.journal-photo-pair .journal-figure { margin: 0; }
+.journal-photo-pair img { height: 100%; max-height: 760px; object-fit: cover; }
+.journal-note { max-width: 720px; margin: 90px auto 0; padding: 32px 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
+.journal-note > span { color: var(--muted); font-family: var(--sans); font-size: .64rem; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; }
+.journal-note p { margin: 18px 0 0; }
 
 .journal-index { padding-top: 20px; }
 .journal-index .category-line { margin-top: 0; }
@@ -548,6 +570,8 @@ img { display: block; width: 100%; }
   .editorial-empty { grid-template-columns: 1fr; min-height: 300px; padding-top: 70px; }
   .editorial-empty strong { grid-row: auto; font-size: clamp(4rem, 23vw, 7rem); }
   .editorial-empty .text-link { grid-column: auto; grid-row: auto; justify-self: start; margin: 20px 0 0; }
+  .journal-feature { grid-template-columns: 1fr; }
+  .journal-feature figure { aspect-ratio: 3 / 4; }
   .garden-home .section-space { padding-block: 100px; }
   .garden-note { margin: 0; }
   .garden-mark { margin-bottom: 45px; }
@@ -587,6 +611,9 @@ img { display: block; width: 100%; }
   .garden-cards { grid-template-columns: 1fr; }
   .status-key.large { justify-content: flex-start; }
   .article-page h1 { font-size: clamp(4.5rem, 20vw, 7rem); }
+  .journal-cover { width: 100%; margin: -20px 0 72px; }
+  .journal-photo-pair { grid-template-columns: 1fr; }
+  .journal-photo-pair img { max-height: none; }
   .about-page { gap: 70px; }
   .about-page-copy h1 { font-size: clamp(5rem, 24vw, 8rem); }
   .not-found h1 { font-size: clamp(6rem, 28vw, 10rem); }
