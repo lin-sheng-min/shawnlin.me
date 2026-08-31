@@ -5,7 +5,6 @@ import SiteHeader from '../components/SiteHeader.astro';
 import { siteLinks } from '../data/site';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
 const photographs = (await getCollection('photography'))
   .filter((entry) => entry.data.featured)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
@@ -46,25 +45,32 @@ const journalCategories = ['Travel', 'Food', 'Stay', 'Fly', 'Cards', 'Notes'];
     </section>
 
     <section class="work-preview shell section-space" id="selected-work" aria-labelledby="work-heading">
-      <div class="section-intro">
-        <p class="kicker">01 / Selected work</p>
-        <div>
-          <h2 id="work-heading">Programs, systems,<br />and the spaces between.</h2>
-          <a class="text-link focus-ring" href="/work">Explore work <span aria-hidden="true">↗</span></a>
+      <div class="home-work-layout">
+        <div class="home-work-label">
+          <p class="kicker">01 / How I work</p>
+          <span aria-hidden="true">✳</span>
         </div>
-      </div>
-      <div class="work-list">
-        {work.map((entry, index) => (
-          <article class="work-row">
-            <span class="chapter">0{index + 1}</span>
-            <div>
-              <h3>{entry.data.company}</h3>
-              <p>{entry.data.role}</p>
-            </div>
-            <p class="work-summary">{entry.data.summary}</p>
-            <time>{entry.data.period}</time>
-          </article>
-        ))}
+        <div class="home-work-content">
+          <h2 id="work-heading">Turning scattered directions<br />into clear plans people<br /><em>can move with.</em></h2>
+          <div class="home-work-principles">
+            <article>
+              <span>01</span>
+              <h3>Find the signal</h3>
+              <p>Make sense of incomplete information and competing priorities.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Create alignment</h3>
+              <p>Give teams a shared direction and clear ownership.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Carry it through</h3>
+              <p>Stay with the work through ambiguity, friction, and delivery.</p>
+            </article>
+          </div>
+          <a class="text-link focus-ring" href="/work">Explore how I work <span aria-hidden="true">↗</span></a>
+        </div>
       </div>
     </section>
 
