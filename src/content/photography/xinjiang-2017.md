@@ -3,17 +3,12 @@ title: Xinjiang, 2017
 description: Snow across the high plains, long roads, quiet villages, and a journey remembered in fragments.
 date: 2017-10-08
 location: Xinjiang · October 2017
-cover: /images/photography/xinjiang-2017/mountains-reflected-at-dusk.webp
-coverAlt: A rugged mountain range reflected in still water beneath a clear evening sky
+cover: /images/photography/xinjiang-2017/high-plains.webp
+coverAlt: Snow-striped mountains rising beyond the wide brown grasslands of Xinjiang
 orientation: landscape
 featured: true
 placeholder: false
 images:
-  - src: /images/photography/xinjiang-2017/roadside-stop.webp
-    alt: A simple roadside stop set against a steep rocky mountain
-    caption: Somewhere along the road
-    width: 2400
-    height: 1600
   - src: /images/photography/xinjiang-2017/brick-passageway.webp
     alt: A narrow sunlit passage between long brick walls with mountains beyond
     caption: Between the walls
