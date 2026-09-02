@@ -7,6 +7,7 @@ cover: /images/journal/la-boqueria-barcelona/seafood-feast.webp
 coverAlt: A generous seafood platter with prawns, mussels, oysters, scallops, and a glass of white wine at La Boqueria
 coverWidth: 1200
 coverHeight: 1800
+coverLayout: large
 draft: false
 ---
 
