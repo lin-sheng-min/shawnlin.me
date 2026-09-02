@@ -530,6 +530,8 @@ img { display: block; width: 100%; }
 .journal-cover { width: 100%; max-width: 470px; margin: 0; justify-self: end; }
 .journal-article-hero.is-large-cover .journal-cover { max-width: 620px; }
 .journal-cover img { width: 100%; aspect-ratio: 4 / 5; height: auto; object-fit: cover; object-position: center; }
+.journal-article-hero.is-landscape-cover .journal-cover { max-width: 660px; }
+.journal-article-hero.is-landscape-cover .journal-cover img { aspect-ratio: 3 / 2; }
 .journal-prose { max-width: none; }
 .journal-prose > p,
 .journal-prose > h2 { max-width: 720px; margin-right: auto; margin-left: auto; }

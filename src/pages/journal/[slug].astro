@@ -20,6 +20,7 @@ const { Content } = await render(entry);
     <div class:list={['journal-article-hero', {
       'has-cover': entry.data.cover,
       'is-large-cover': entry.data.coverLayout === 'large',
+      'is-landscape-cover': entry.data.coverOrientation === 'landscape',
     }]}>
       <header>
         <p class="kicker">{entry.data.category} / {entry.data.date.getFullYear()}</p>
