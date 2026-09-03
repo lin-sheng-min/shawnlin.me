@@ -119,7 +119,7 @@ const journalCategories = ['Travel', 'Food', 'Stay', 'Fly', 'Cards', 'Notes'];
         </div>
       ) : (
         <div class="journal-features">
-          {journal.slice(0, 3).map((entry) => (
+          {journal.map((entry) => (
             <a class="journal-feature focus-ring" href={`/journal/${entry.id}/`}>
               {entry.data.cover && (
                 <figure>
