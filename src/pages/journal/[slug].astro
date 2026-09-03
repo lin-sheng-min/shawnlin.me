@@ -40,6 +40,23 @@ const { Content } = await render(entry);
       )}
     </div>
     <article class="prose journal-prose"><Content /></article>
+    {entry.data.place && (
+      <section class="journal-place" aria-labelledby={`place-${entry.id}`}>
+        <div class="journal-place-copy">
+          <p class="kicker">Place details</p>
+          <h2 id={`place-${entry.id}`}>{entry.data.place.name}</h2>
+          <address>{entry.data.place.address}</address>
+        </div>
+        <nav class="journal-place-links" aria-label={`${entry.data.place.name} links`}>
+          <a class="focus-ring" href={entry.data.place.mapUrl} target="_blank" rel="noopener noreferrer">
+            <span>Google Maps</span><span aria-hidden="true">↗</span>
+          </a>
+          <a class="focus-ring" href={entry.data.place.websiteUrl} target="_blank" rel="noopener noreferrer">
+            <span>Official website</span><span aria-hidden="true">↗</span>
+          </a>
+        </nav>
+      </section>
+    )}
   </main>
   <SiteFooter />
 </BaseLayout>

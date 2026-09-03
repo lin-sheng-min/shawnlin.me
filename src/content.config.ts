@@ -52,6 +52,12 @@ const journal = defineCollection({
     coverHeight: z.number().optional(),
     coverLayout: z.enum(['standard', 'large']).default('standard'),
     coverOrientation: z.enum(['portrait', 'landscape']).default('portrait'),
+    place: z.object({
+      name: z.string(),
+      address: z.string(),
+      mapUrl: z.url(),
+      websiteUrl: z.url(),
+    }).optional(),
     draft: z.boolean().default(false),
   }),
 });

@@ -8,6 +8,11 @@ coverAlt: A generous seafood platter with prawns, mussels, oysters, scallops, an
 coverWidth: 1200
 coverHeight: 1800
 coverLayout: large
+place:
+  name: Mercat de la Boqueria
+  address: La Rambla, 91, 08001 Barcelona, Spain
+  mapUrl: https://maps.app.goo.gl/H6nLHDnb74L9Sw9LA
+  websiteUrl: https://www.boqueria.barcelona/
 draft: false
 ---
 

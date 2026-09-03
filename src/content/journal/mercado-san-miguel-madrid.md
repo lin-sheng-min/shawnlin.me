@@ -9,6 +9,11 @@ coverWidth: 1600
 coverHeight: 1067
 coverLayout: large
 coverOrientation: landscape
+place:
+  name: Mercado de San Miguel
+  address: Plaza de San Miguel, s/n, 28005 Madrid, Spain
+  mapUrl: https://maps.app.goo.gl/fBi9DkdLh4EtzhgF8
+  websiteUrl: https://mercadodesanmiguel.es/
 draft: false
 ---
 

@@ -7,6 +7,11 @@ cover: /images/journal/loquita-santa-barbara/loquita-patio-at-night.webp
 coverAlt: The flower-lined outdoor patio at Loquita glowing under warm lights at night
 coverWidth: 1600
 coverHeight: 2400
+place:
+  name: Loquita
+  address: 202 State Street, Santa Barbara, CA 93101
+  mapUrl: https://www.google.com/maps/search/?api=1&query=Loquita%2C%20202%20State%20Street%2C%20Santa%20Barbara%2C%20CA%2093101
+  websiteUrl: https://www.loquitasb.com/
 draft: false
 ---
 

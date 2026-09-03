@@ -1,5 +1,5 @@
 ---
-title: La Pepita Was Worth the Recommendation
+title: La Pepita Was Worth It
 description: A narrow, always-busy Barcelona tapas bar where two saved recommendations turned into one of the most surprising dinners of the trip.
 date: 2025-03-01
 category: Food
@@ -8,6 +8,11 @@ coverAlt: La Pepita's signature beef Pepita topped with seared foie gras and ser
 coverWidth: 1200
 coverHeight: 1800
 coverLayout: large
+place:
+  name: La Pepita
+  address: Carrer de Còrsega, 343, 08037 Barcelona, Spain
+  mapUrl: https://maps.app.goo.gl/ux1BV6tCC33aSwiu6
+  websiteUrl: https://www.lapepitabcn.com/
 draft: false
 ---
 
@@ -76,5 +81,5 @@ The whole meal matched the room: colorful, generous, and a little chaotic in the
 
 <aside class="journal-note">
   <span>Worth knowing</span>
-  <p>La Pepita is at Carrer de Còrsega, 343 in Barcelona. It gets busy and the room is compact, so a reservation is worth considering. The restaurant also welcomes walk-ins at the bar. <a href="https://www.lapepitabcn.com/contact-l-opening-times">Restaurant details ↗</a> <a href="https://maps.app.goo.gl/ux1BV6tCC33aSwiu6">Google Maps ↗</a></p>
+  <p>It gets busy and the room is compact, so a reservation is worth considering. The restaurant also welcomes walk-ins at the bar.</p>
 </aside>
