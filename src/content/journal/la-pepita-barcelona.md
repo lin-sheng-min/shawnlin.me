@@ -3,8 +3,8 @@ title: La Pepita Was Worth It
 description: A narrow, always-busy Barcelona tapas bar where two saved recommendations turned into one of the most surprising dinners of the trip.
 date: 2025-03-01
 category: Food
-cover: /images/journal/la-pepita-barcelona/pepita-de-ternera.webp
-coverAlt: La Pepita's signature beef Pepita topped with seared foie gras and served over toasted bread
+cover: /images/journal/la-pepita-barcelona/table-full-of-tapas.webp
+coverAlt: A table at La Pepita filled with tapas and two glasses of rosé against the restaurant's signature-covered wall
 coverWidth: 1200
 coverHeight: 1800
 coverLayout: large
@@ -55,21 +55,19 @@ The calamari was one of the dishes we came specifically to try. It arrived crisp
   </div>
 </section>
 
-<div class="journal-photo-pair is-portrait">
+<section class="journal-split">
   <figure class="journal-figure">
     <img src="/images/journal/la-pepita-barcelona/rose-by-the-signatures.webp" alt="A bottle and two glasses of rosé beside La Pepita's colorful signature-covered wall" width="1200" height="1800" loading="lazy" />
     <figcaption>Rosé by the signature wall</figcaption>
   </figure>
-  <figure class="journal-figure">
-    <img src="/images/journal/la-pepita-barcelona/table-full-of-tapas.webp" alt="A table filled with La Pepita's beef Pepita, calamari, another small plate, and two glasses of rosé" width="1200" height="1800" loading="lazy" />
-    <figcaption>The table before everything disappeared</figcaption>
-  </figure>
-</div>
-
-The whole meal matched the room: colorful, generous, and a little chaotic in the best way. La Pepita is not a restaurant that wins you over with space or ceremony. It does it with personality and food that is much more thoughtful than the casual setting suggests.
+  <div class="journal-split-copy">
+    <h2>A room with its own memory</h2>
+    <p>The whole meal matched the room: colorful, generous, and a little chaotic in the best way. La Pepita is not a restaurant that wins you over with space or ceremony. It does it with personality and food that is much more thoughtful than the casual setting suggests.</p>
+  </div>
+</section>
 
 <section class="journal-split">
-  <figure class="journal-figure">
+  <figure class="journal-figure is-top-aligned">
     <img src="/images/journal/la-pepita-barcelona/la-pepita-entrance.webp" alt="The sticker-covered entrance and illuminated La Pepita sign in Barcelona at night" width="1200" height="1800" loading="lazy" />
     <figcaption>La Pepita after dinner</figcaption>
   </figure>
