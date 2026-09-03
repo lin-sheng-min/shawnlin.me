@@ -360,6 +360,7 @@ img { display: block; width: 100%; }
 }
 .home-page .hero-copy { min-height: 470px; }
 .home-page .hero-media { min-height: 0; aspect-ratio: 16 / 10; align-self: center; }
+.home-page .hero-media img { object-position: center 20%; }
 .home-page .hero h1 { font-size: clamp(3.4rem, 4.6vw, 5.8rem); }
 .home-page .section-space { padding-block: clamp(78px, 9vw, 132px); }
 .home-page .section-intro { margin-bottom: clamp(54px, 6vw, 90px); }
